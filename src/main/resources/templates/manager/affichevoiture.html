@@ -1,0 +1,61 @@
+<!-- page.html -->
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="layouts/layoutm">
+
+
+
+<head>
+  <!-- Set the page-specific title -->
+  <title layout:title="Page Title">Affiche voiture </title>
+
+</head>
+
+<!-- Replace the header section with custom content -->
+
+
+<!-- Replace the content section with custom content -->
+<section layout:fragment="main" >
+  <div class="main-content">
+    <div class="main">
+
+      <h2 class="center-block">Les Voitures disponibles :   </h2>
+      <table id="myTable" class="table table-hover table-responsive" >
+        <thead>
+        <tr>
+
+          <th class="text-left">Marque</th>
+          <th class="text-left">Modele</th>
+          <th class="text-left">annee</th>
+          <th class="text-left">Matricule</th>
+          <th class="text-left">Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate over the list of demands and populate the table -->
+        <tr th:each="voiture : ${voitures}">
+
+          <td th:text="${voiture.getMarque()}"></td>
+          <td th:text="${voiture.getModele()}"></td>
+          <td th:text="${voiture.getAnnee()}"></td>
+          <td th:text="${voiture.getMatricule()}"></td>
+
+          <td>
+            <a  th:href="'/manager/edit/'+${voiture.getId()}+'/'+${manager.getId()}"  class="btn btn-success">Editer</a>
+            <a th:href="'/manager/delete/'+${voiture.getId()}+'/'+${manager.getId()}"  class="btn btn-danger">Supprimer</a>
+            <a  th:href="'/manager/reserver/'+${voiture.getId()}+'/'+${manager.getId()}"  class="btn btn-primary">Reserver</a>
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</section>
+
+<!-- Replace the footer section with custom content -->
+<footer layout:fragment="footer">
+  <p>Custom Footer</p>
+</footer>
+</html>

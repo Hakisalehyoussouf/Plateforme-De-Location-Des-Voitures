@@ -1,0 +1,57 @@
+<!-- page.html -->
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="layouts/layout">
+
+
+
+<head>
+  <!-- Set the page-specific title -->
+  <title layout:title="Page Title">Affiche reservation </title>
+
+</head>
+
+<!-- Replace the header section with custom content -->
+
+
+<!-- Replace the content section with custom content -->
+<section layout:fragment="main" >
+  <div class="main-content">
+    <div class="main">
+
+      <h2 class="center-block">Les Managers :   </h2>
+      <table id="myTable" class="table table-hover table-responsive" >
+        <thead>
+        <tr>
+
+          <th class="text-left">Nom</th>
+          <th class="text-left">Email</th>
+          <th class="text-left">Password</th>
+          <th class="text-left">Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate over the list of demands and populate the table -->
+        <tr th:each="manager : ${managers}">
+
+          <td th:text="${manager.getUsername()}"></td>
+          <td th:text="${manager.getEmail()}"></td>
+          <td th:text="${manager.getPassword()}"></td>
+          <td>
+            <a  th:href="'/admin/delete/'+${manager.getId()}+'/'+${admin.getId()}"  class="btn btn-success">Supprimer</a>
+            <a th:href="'/admin/edit/'+${manager.getId()}+'/'+${admin.getId()}"  class="btn btn-danger">Modifier</a>
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</section>
+
+<!-- Replace the footer section with custom content -->
+<footer layout:fragment="footer">
+  <p>Custom Footer</p>
+</footer>
+</html>

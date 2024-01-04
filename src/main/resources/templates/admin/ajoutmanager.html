@@ -1,0 +1,60 @@
+<!-- page.html -->
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="layouts/layout">
+
+
+
+<head>
+  <!-- Set the page-specific title -->
+  <title layout:title="Page Title">Ajout du manager </title>
+
+</head>
+
+<!-- Replace the header section with custom content -->
+
+
+<!-- Replace the content section with custom content -->
+<section layout:fragment="main" >
+  <div class="main-content" >
+    <div class="main">
+      <div class="main-content" style="position: absolute; bottom: 20px; left: 30%; transform: translateX(-110%);transform: translateY(20%);">
+        <form th:action="@{/admin/ajoutmanagerValidatee}" method="post" >
+          <div class="form-group">
+            <label for="nom">Nom Complet:</label>
+            <input type="text" class="form-control" id="nom" name="nom" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" required></input>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Passowrd:</label>
+            <input type="text" class="form-control" id="password" name="password" required>
+          </div>
+
+
+
+          <div class="form-group">
+            <input type="hidden" class="form-control-file" th:value="${admin.getId()}" name="idAdmin" multiple required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Replace the footer section with custom content -->
+<footer layout:fragment="footer">
+  <p>Custom Footer</p>
+</footer>
+</html>

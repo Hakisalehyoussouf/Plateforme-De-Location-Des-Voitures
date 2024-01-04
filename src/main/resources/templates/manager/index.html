@@ -1,0 +1,69 @@
+<!-- page.html -->
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="layouts/layoutm">
+
+
+
+<head>
+    <!-- Set the page-specific title -->
+    <title layout:title="Page Title">Dashboard </title>
+
+</head>
+
+<!-- Replace the header section with custom content -->
+
+
+<!-- Replace the content section with custom content -->
+<section layout:fragment="main" >
+    <div class="main-content">
+        <div class="main">
+            <div class="widget">
+                <div class="chart-head">
+                    <h5>Total De voitures</h5>
+                </div>
+                <div class="chart-body">
+                    <div class="col-md-6">
+                        <img src="/bootstrap/img/canvas1.png">
+                    </div>
+                    <div class="col-md-6 text-right">
+
+                        <span class="badge badge1"> <h3 th:text="${nbr_annonce}"></h3></span>
+                    </div>
+                </div>
+            </div>
+            <div class="widget">
+                <div class="chart-head">
+                    <h5>Total de reservations accepées</h5>
+                </div>
+                <div class="chart-body">
+                    <div class="col-md-6">
+                        <img src="/bootstrap/img/canvas2.png">
+                    </div>
+                    <div class="col-md-6 text-right">
+
+                        <span class="badge badge2"><h3 th:text="${nbr_reservation}"</span>
+                    </div>
+                </div>
+            </div>
+            <div class="widget">
+                <div class="chart-head">
+                    <h5>Total de reservations refusées</h5>
+                </div>
+                <div class="chart-body">
+                    <div class="col-md-6">
+                        <img src="/bootstrap/img/canvas3.png">
+                    </div>
+                    <div class="col-md-6 text-right">
+
+                        <span class="badge badge3"><h3 th:text="${nbr_partenaire}"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- Replace the footer section with custom content -->
+<footer layout:fragment="footer">
+    <p>Custom Footer</p>
+</footer>
+</html>

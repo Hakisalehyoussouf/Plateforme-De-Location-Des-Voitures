@@ -1,0 +1,89 @@
+
+#facture-header{
+	background-color: #0D47A1; 
+	color:white;
+	height: 35px;
+	margin-top: 10px;
+	letter-spacing: 20px;
+	font-size:20px;
+	width: 1000px;
+	margin-top: 50px;
+}
+
+#head-facture{
+	display: flex;
+	justify-content: center;
+}
+
+#adresse{
+	margin-top: 20px;
+	position: relative;
+	left: 150px;
+}
+
+#logo-facture{
+	position: relative;
+	left: 720px;
+	width: 266px;
+	height: 100px;
+	bottom: 20px;
+}
+
+#client-facture{
+	width: 250px;
+	position: relative;
+	left: 80px;
+	bottom: 50px;
+
+}
+
+#facture-info{
+	border:1px solid #72777a;
+	border-radius: 10px;
+	width: 500px;
+	position: relative;
+	left:90px;
+}
+
+.fa-bolt{
+	color: #FFFF00;
+}
+
+.facture-icon{
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.table-consomation{
+	position: relative;
+	width: 300px;
+	height: 80px;
+	left:100px;
+	bottom: 80px;
+
+
+}
+
+
+.prix{
+
+	position: relative;
+	left: 250px;
+	bottom: 150px;
+}
+
+hr{
+	background-color: #0D47A1;
+	position: relative;
+	left: 52px;
+}
+
+label{
+	position: relative;
+	left: 50px;
+}
+
+.date-limite{
+	position: relative;
+	left: 50px;
+}

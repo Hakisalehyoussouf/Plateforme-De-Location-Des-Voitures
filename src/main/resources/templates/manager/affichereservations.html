@@ -1,0 +1,61 @@
+<!-- page.html -->
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="layouts/layoutm">
+
+
+
+<head>
+  <!-- Set the page-specific title -->
+  <title layout:title="Page Title">Affiche reservation </title>
+
+</head>
+
+<!-- Replace the header section with custom content -->
+
+
+<!-- Replace the content section with custom content -->
+<section layout:fragment="main" >
+  <div class="main-content">
+    <div class="main">
+
+      <h2 class="center-block">Les Reservations en cours :   </h2>
+      <table id="myTable" class="table table-hover table-responsive" >
+        <thead>
+        <tr>
+
+          <th class="text-left">Client_Cin</th>
+          <th class="text-left">Client_Nom</th>
+          <th class="text-left">Client_Prenom</th>
+          <th class="text-left">Client_email</th>
+          <th class="text-left">Voiture</th>
+          <th class="text-left">Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate over the list of demands and populate the table -->
+        <tr th:each="reservation : ${reservations}">
+
+          <td th:text="${reservation.getClient().getCin()}"></td>
+          <td th:text="${reservation.getClient().getNom()}"></td>
+          <td th:text="${reservation.getClient().getPrenom()}"></td>
+          <td th:text="${reservation.getClient().getEmail()}"></td>
+          <td th:text="${reservation.getVoiture().getMarque()}+','+${reservation.getVoiture().getMatricule()}"></td>
+          <td>
+            <a  th:href="'/manager/accepter/'+${reservation.getId()}+'/'+${manager.getId()}"  class="btn btn-success">Accepter</a>
+            <a th:href="'/manager/refuser/'+${reservation.getId()}+'/'+${manager.getId()}"  class="btn btn-danger">Refuser</a>
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</section>
+
+<!-- Replace the footer section with custom content -->
+<footer layout:fragment="footer">
+  <p>Custom Footer</p>
+</footer>
+</html>

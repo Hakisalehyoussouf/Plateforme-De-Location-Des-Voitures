@@ -1,0 +1,71 @@
+<!-- page.html -->
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="layouts/layoutm">
+
+
+
+<head>
+  <!-- Set the page-specific title -->
+  <title layout:title="Page Title">Ajout voiture </title>
+
+</head>
+
+<!-- Replace the header section with custom content -->
+
+
+<!-- Replace the content section with custom content -->
+<section layout:fragment="main" >
+  <div class="main-content" >
+    <div class="main">
+      <div class="main-content" style="position: absolute; bottom: 20px; left: 30%; transform: translateX(-110%);transform: translateY(20%);">
+        <form th:action="@{/manager/ajoutvoitureValidatee}" method="post" >
+          <div class="form-group">
+            <label for="marque">Marque:</label>
+            <input type="text" class="form-control" id="marque" name="marque" required>
+          </div>
+          <div class="form-group">
+            <label for="modele">Modele:</label>
+            <textarea class="form-control" id="modele" name="modele" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="annee">Annee:</label>
+            <input type="number" class="form-control" id="annee" name="annee" required>
+          </div>
+
+          <div class="form-group">
+            <label for="matricule">Maticule:</label>
+            <input type="text" class="form-control" id="matricule" name="matricule" required>
+          </div>
+
+
+          <div class="form-group">
+            <label for="prix">Prix:</label>
+            <input type="number" class="form-control" id="prix" name="prix" required>
+          </div>
+
+
+
+
+
+          <div class="form-group">
+            <input type="hidden" class="form-control-file" th:value="${manager.getId()}" name="idManager" multiple required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Replace the footer section with custom content -->
+<footer layout:fragment="footer">
+  <p>Custom Footer</p>
+</footer>
+</html>

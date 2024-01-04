@@ -1,0 +1,77 @@
+<!-- page.html -->
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="layouts/layoutm">
+
+
+
+<head>
+  <!-- Set the page-specific title -->
+  <title layout:title="Page Title">Ajout reservation </title>
+
+</head>
+
+<!-- Replace the header section with custom content -->
+
+
+<!-- Replace the content section with custom content -->
+<section layout:fragment="main" >
+  <div class="main-content" >
+    <div class="main">
+      <div class="main-content" style="position: absolute; bottom: 20px; left: 30%; transform: translateX(-110%);transform: translateY(20%);">
+        <form th:action="@{/manager/reservationValidate}" method="post" >
+          <div class="form-group">
+            <label for="cin">Cin:</label>
+            <input type="text" class="form-control" id="cin" name="cin" required>
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom:</label>
+            <input type="text" class="form-control" id="nom" name="nom" required></input>
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prenom:</label>
+            <input type="text" class="form-control" id="prenom" name="prenom" required>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" required>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="date_fin">Date Fin:</label>
+            <input type="date" class="form-control" id="date_fin" name="date_fin" required>
+          </div>
+
+
+
+          <div class="form-group">
+            <input type="hidden" class="form-control-file" th:value="${voiture.getId()}" name="idVoiture" multiple required>
+          </div>
+
+
+          <div class="form-group">
+            <input type="hidden" class="form-control-file" th:value="${manager.getId()}" name="idManager" multiple required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Sauvegarder</button>
+        </form>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Replace the footer section with custom content -->
+<footer layout:fragment="footer">
+  <p>Custom Footer</p>
+</footer>
+</html>

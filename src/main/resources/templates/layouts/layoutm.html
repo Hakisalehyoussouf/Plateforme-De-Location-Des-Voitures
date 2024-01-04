@@ -1,0 +1,106 @@
+<!-- layout.html -->
+<html xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+  <!-- Define the title tag -->
+  <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Title</title>
+
+
+
+  <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/bootstrap/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/bootstrap/css/style.css">
+
+
+
+</head>
+
+<body>
+
+
+<section layout:fragment="header">
+
+  <div class="header fixed-top" style="background-color: #585a64;">
+
+    <div class="User pull-right">
+
+    <div class="clearfix"></div>
+  </div>
+
+
+
+</section>
+
+<section layout:fragment="side-nav">
+  <div class="side-nav fixed-left">
+
+    <nav>
+      <ul>
+        <li>
+          <span class="side-title"><h1> </h1></span>
+        </li>
+        <li >
+          <a th:href="'/dashboardManager/'+${manager.getId()}">
+            <span><i class="fa fa-tachometer"></i></span>
+            <span>Tableau de bord</span>
+          </a>
+        </li>
+        <li >
+          <a th:href="'/manager/voitures/'+${manager.getId()}">
+            <span><i class="fa fa-users"></i></span>
+            <span>Voitures</span>
+          </a>
+        </li>
+
+
+        <li >
+          <a th:href="'/manager/reservations/'+${manager.getId()}">
+            <span><i class="fa fa-bar-chart"></i></span>
+            <span>Reservations</span>
+          </a>
+        </li>
+
+        <li >
+          <a th:href="'/manager/ajoutvoiture/'+${manager.getId()}">
+            <span><i class="fa fa-credit-card-alt"></i></span>
+            <span>Ajouter voiture</span>
+          </a>
+        </li>
+
+
+
+
+        <li >
+          <a href="#">
+            <span><i class="fa fa-credit-card-alt"></i></span>
+            <span>Se deconnecter</span>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+
+</section>
+
+
+
+
+
+
+<!-- Define a content section -->
+<section layout:fragment="main-content">
+
+</section>
+
+
+<section layout:fragment="main">
+
+  <section>
+    <!-- Define a footer section -->
+    <footer layout:fragment="footer">
+      <p>Footer Section</p>
+    </footer>
+</body>
+
+</html>
